@@ -5,3 +5,12 @@
  */
 
 // You can delete this file if you're not using it
+
+export const onClientEntry = () => {
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  })
+}

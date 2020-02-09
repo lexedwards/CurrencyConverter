@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: '{Meta-Title}',
-    description: '{Meta-Desc}',
+    title: 'Currency + Countries Made Easy',
+    description: 'A simple tool with a purpose',
     author: 'Alex Edwards @lexedwards',
   },
   plugins: [
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: '{Manifest-Name}',
-        short_name: '{Name}',
+        name: 'Currency + Countries',
+        short_name: 'Currency+',
         start_url: '/',
         background_color: '#000',
         theme_color: '#000',
