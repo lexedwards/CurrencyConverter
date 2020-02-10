@@ -15,7 +15,6 @@ module.exports = function(context) {
     }),
     require('postcss-nested'),
     require('postcss-simple-vars'),
-    /* require('@fullhuman/postcss-purgecss') */
     require('autoprefixer'),
     require('cssnano'),
   ]
