@@ -6,6 +6,8 @@
 
 // You can delete this file if you're not using it
 
+import './src/styles/Main.css'
+
 export const onClientEntry = () => {
   let vh = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--vh', `${vh}px`)
