@@ -21,7 +21,8 @@ This project is utilising two publically available API's for it's information:
   from the European Central Bank.
 - [RestCountries](https://restcountries.eu) - Country information along with SVG Flags
 
-_The Exchange Rate API may change to [OpenExchangeRates](https://openexchangerates.org/) - however their free plan is based in USD; so would add extra complexity to the resulting code_
+_The Exchange Rate API may change to [OpenExchangeRates](https://openexchangerates.org/) -
+however their signup service isn't working at this current point in time_
 
 ## What Technology is involved
 
@@ -31,3 +32,6 @@ GraphQL to handle API calls easily
 
 Backend Testing will be performed with Jest ( Functional Unit Testing ) and
 Cypress (for End2End Testing)
+
+For quicker development, this project is going to use Tailwind with PostCSS <- Two things
+I haven't used before

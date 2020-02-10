@@ -5,6 +5,7 @@ module.exports = {
     author: 'Alex Edwards @lexedwards',
   },
   plugins: [
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -25,22 +26,6 @@ module.exports = {
         theme_color: '#000',
         display: 'minimal-ui',
         // icon : '' This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        implementation: require('sass'),
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [
-          require('postcss-preset-env')(),
-          require('autoprefixer')(),
-          require('cssnano')(),
-        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

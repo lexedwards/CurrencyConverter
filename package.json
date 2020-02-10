@@ -15,19 +15,21 @@
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-postcss": "^2.1.20",
     "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
+    "postcss": "^7.0.26",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "sass": "^1.25.0"
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "@testing-library/cypress": "^5.3.0",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.0",
@@ -48,6 +50,11 @@
     "jest": "^25.1.0",
     "jest-in-case": "^1.0.2",
     "lint-staged": "^10.0.7",
+    "postcss-functions": "^3.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.3",
+    "postcss-nested": "^4.2.1",
+    "postcss-simple-vars": "^5.0.2",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "start-server-and-test": "^1.10.8"
@@ -65,7 +72,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test:unit": "jest", 
+    "test:unit": "jest",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "lint-staged": {
@@ -82,18 +89,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "repository": {
     "type": "git",
