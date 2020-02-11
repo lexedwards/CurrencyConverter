@@ -3,6 +3,7 @@ module.exports = {
     title: 'Currency + Countries Made Easy',
     description: 'A simple tool with a purpose',
     author: 'Alex Edwards @lexedwards',
+    website: '//alexedwards.co',
   },
   plugins: [
     'gatsby-plugin-postcss',

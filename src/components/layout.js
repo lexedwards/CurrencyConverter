@@ -18,6 +18,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          author
+          website
         }
       }
       profileImage: file(relativePath: { eq: "Social-1080.png" }) {
@@ -47,14 +49,14 @@ const Layout = ({ children }) => {
             fluid={data.profileImage.childImageSharp.fluid}
           />
           <div className="text-center md:text-left">
-            <p className="text-lg">Made by Alex Edwards</p>
-            <p className=" text-teal-600 ">Front-End Developer</p>
+            <p className="text-lg">Made by {data.site.siteMetadata.author}</p>
+            <p className=" text-teal-700 text-sm ">Front-End Developer</p>
             <a
-              href="//alexedwards.co"
+              href={data.site.siteMetadata.website}
               rel="dns-prefetch noopener noreferrer"
               target="_blank"
             >
-              Look me up!
+              Website
             </a>
           </div>
         </footer>
