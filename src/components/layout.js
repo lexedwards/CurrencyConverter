@@ -43,23 +43,23 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer className="md:flex md:mx-auto md:max-w-sm border-gray-600 bxs-natural bg-white rounded-lg p-6">
-          <Img
-            className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
-            fluid={data.profileImage.childImageSharp.fluid}
-          />
-          <div className="text-center md:text-left">
-            <p className="text-lg">Made by {data.site.siteMetadata.author}</p>
-            <p className=" text-teal-700 text-sm ">Front-End Developer</p>
-            <a
-              href={data.site.siteMetadata.website}
-              rel="dns-prefetch noopener noreferrer"
-              target="_blank"
-            >
-              Website
-            </a>
-          </div>
-        </footer>
+        <a
+          href={data.site.siteMetadata.website}
+          rel="dns-prefetch noopener noreferrer"
+          target="_blank"
+          className="md:mx-auto md:max-w-sm block"
+        >
+          <footer className="md:flex border-gray-600 bxs-natural bg-white rounded-lg p-6">
+            <Img
+              className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
+              fluid={data.profileImage.childImageSharp.fluid}
+            />
+            <div className="text-center md:text-left">
+              <p className="text-lg">Made by {data.site.siteMetadata.author}</p>
+              <p className=" text-teal-700 text-sm ">Front-End Developer</p>
+            </div>
+          </footer>
+        </a>
       </div>
     </>
   )

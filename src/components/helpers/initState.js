@@ -1,3 +1,1 @@
-export default () => ({
-  state: false,
-})
+export default () => ({})
