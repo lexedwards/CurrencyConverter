@@ -1,9 +1,8 @@
+import { StateProvider } from './src/components/helpers/Context'
+import './src/styles/Main.css'
+
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StateProvider } from './src/components/helpers/Context'
-import { Reducer } from './src/components/helpers/Reducer'
-import initState from './src/components/helpers/initState'
-import './src/styles/Main.css'
 
 export const onClientEntry = () => {
   let vh = window.innerHeight * 0.01
@@ -14,12 +13,10 @@ export const onClientEntry = () => {
   })
 }
 
-export const wrapRootElement = ({ children }) => (
-  <StateProvider initialState={initState} reducer={Reducer}>
-    {children}
-  </StateProvider>
+export const wrapRootElement = ({ element }) => (
+  <StateProvider>{element}</StateProvider>
 )
 
 wrapRootElement.propTypes = {
-  children: PropTypes.element.isRequired,
+  element: PropTypes.node.isRequired,
 }
