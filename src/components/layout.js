@@ -35,13 +35,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '0 1.0875rem 1.45rem',
-        }}
-      >
+      <div className="max-w-5xl mx-auto pl-6 pr-6">
         <main>{children}</main>
         <a
           href={data.site.siteMetadata.website}
@@ -53,8 +47,9 @@ const Layout = ({ children }) => {
             <Img
               className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
               fluid={data.profileImage.childImageSharp.fluid}
+              alt="Profile of Alex Edwards"
             />
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left font-raleway">
               <p className="text-lg">Made by {data.site.siteMetadata.author}</p>
               <p className=" text-teal-700 text-sm ">Front-End Developer</p>
             </div>
