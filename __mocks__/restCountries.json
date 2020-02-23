@@ -1,0 +1,90 @@
+[
+  {
+    "currencies": [
+      {
+        "code": "AFN",
+        "name": "Afghan afghani",
+        "symbol": "؋"
+      }
+    ],
+    "languages": [
+      {
+        "iso639_1": "ps",
+        "iso639_2": "pus",
+        "name": "Pashto",
+        "nativeName": "پښتو"
+      },
+      {
+        "iso639_1": "uz",
+        "iso639_2": "uzb",
+        "name": "Uzbek",
+        "nativeName": "Oʻzbek"
+      },
+      {
+        "iso639_1": "tk",
+        "iso639_2": "tuk",
+        "name": "Turkmen",
+        "nativeName": "Türkmen"
+      }
+    ],
+    "translations": {
+      "br": "Afeganistão",
+      "pt": "Afeganistão",
+      "nl": "Afghanistan",
+      "hr": "Afganistan",
+      "fa": "افغانستان",
+      "de": "Afghanistan",
+      "es": "Afganistán",
+      "fr": "Afghanistan",
+      "ja": "アフガニスタン",
+      "it": "Afghanistan"
+    },
+    "flag": "https://restcountries.eu/data/afg.svg",
+    "name": "Afghanistan",
+    "capital": "Kabul",
+    "region": "Asia",
+    "population": 27657145,
+    "latlng": [33.0, 65.0],
+    "timezones": ["UTC+04:30"],
+    "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+    "nativeName": "افغانستان"
+  },
+  {
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      {
+        "iso639_1": "sv",
+        "iso639_2": "swe",
+        "name": "Swedish",
+        "nativeName": "svenska"
+      }
+    ],
+    "translations": {
+      "br": "Ilhas de Aland",
+      "pt": "Ilhas de Aland",
+      "nl": "Ålandeilanden",
+      "hr": "Ålandski otoci",
+      "fa": "جزایر الند",
+      "de": "Åland",
+      "es": "Alandia",
+      "fr": "Åland",
+      "ja": "オーランド諸島",
+      "it": "Isole Aland"
+    },
+    "flag": "https://restcountries.eu/data/ala.svg",
+    "name": "Åland Islands",
+    "capital": "Mariehamn",
+    "region": "Europe",
+    "population": 28875,
+    "latlng": [60.116667, 19.9],
+    "timezones": ["UTC+02:00"],
+    "borders": [],
+    "nativeName": "Åland"
+  }
+]
