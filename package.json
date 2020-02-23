@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "currency-converter",
   "private": true,
   "description": "",
   "version": "0.1.0",
@@ -7,6 +7,7 @@
   "dependencies": {
     "autoprefixer": "^9.7.4",
     "axios": "^0.19.2",
+    "axios-cache-adapter": "^2.5.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
@@ -50,6 +51,7 @@
     "jest": "^25.1.0",
     "jest-in-case": "^1.0.2",
     "lint-staged": "^10.0.7",
+    "moxios": "^0.4.0",
     "postcss-functions": "^3.0.0",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.3",
@@ -73,6 +75,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test:unit": "jest",
+    "test:dev": "jest --watch",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "lint-staged": {
@@ -92,9 +95,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lexedwards/CurrencyConverter"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/lexedwards/CurrencyConverter/issues"
   }
 }

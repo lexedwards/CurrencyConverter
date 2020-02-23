@@ -1,8 +1,8 @@
 export const Reducer = (state, action) => {
   switch (action.type) {
     case '':
-      return {}
+      return {};
     default:
-      return state
+      return state;
   }
-}
+};
