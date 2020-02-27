@@ -1,11 +1,11 @@
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'gatsby';
 
 const Header = ({ siteTitle }) => (
   <header>
     <div id="menuButton"></div>
-    <div id="menuPanel">
+    <nav id="menuPanel">
       <div id="search">
         <div id="searchBar"></div>
         <div id="searchResults hidden"></div>
@@ -13,10 +13,14 @@ const Header = ({ siteTitle }) => (
       <div id="title" className="font-raleway font-extrabold text-3xl">
         {siteTitle}
       </div>
-      <div id="home"></div>
-      <div id="exchangeRates"></div>
-      <div id="countries"></div>
-    </div>
+      <Link to="/">Home</Link>
+      <Link to="/xcr" id="exchangeRates">
+        Exchange Calculator
+      </Link>
+      <Link to="/countries" id="countries">
+        Country Information
+      </Link>
+    </nav>
   </header>
 );
 

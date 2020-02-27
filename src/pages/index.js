@@ -10,10 +10,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section id="PageTitle">
-        <div id="title"></div>
-        <div id="description"></div>
-      </section>
       <section id="ExchangeCalc">
         <div id="exchange"></div>
       </section>
