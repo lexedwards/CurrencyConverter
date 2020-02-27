@@ -1,51 +1,56 @@
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 
-const Select = ({ data }) => {
+const SAMPLE_DATA = {
+  USD: {
+    label: 'USD',
+    name: 'United States Dollar',
+    value: 1,
+    icon: 'https://restcountries.eu/data/usa.svg',
+  },
+  EUR: {
+    label: 'EUR',
+    name: 'Euro',
+    value: 0.9,
+    icon: 'https://restcountries.eu/data/eur.svg',
+  },
+  GBP: {
+    label: 'GBP',
+    name: 'Pound Sterling',
+    value: 0.78,
+    icon: 'https://restcountries.eu/data/gbp.svg',
+  },
+  JPY: {
+    label: 'JPY',
+    name: 'Japanese Yen',
+    value: 110,
+    icon: 'https://restcountries.eu/data/jpy.svg',
+  },
+};
+
+const Select = ({ data = SAMPLE_DATA }) => {
   const [viewList, setList] = useState(false);
 
-  const SAMPLE_DATA = {
-    USD: {
-      label: 'USD',
-      name: 'United States Dollar',
-      value: 1,
-      icon: 'https://restcountries.eu/data/usa.svg',
-    },
-    EUR: {
-      label: 'EUR',
-      name: 'Euro',
-      value: 0.9,
-      icon: 'https://restcountries.eu/data/eur.svg',
-    },
-    GBP: {
-      label: 'GBP',
-      name: 'Pound Sterling',
-      value: 0.78,
-      icon: 'https://restcountries.eu/data/gbp.svg',
-    },
-    JPY: {
-      label: 'JPY',
-      name: 'Japanese Yen',
-      value: 110,
-      icon: 'https://restcountries.eu/data/jpy.svg',
-    },
-  };
+  const [curSelection, setSelection] = useState('USD');
 
   const handleClick = () => {
     setList(!viewList);
   };
 
-  const hangleChange = () => {};
+  const handleChange = e => {};
+
+  const offFocus = () => {};
 
   return (
     <div className="Select relative">
       <button type="button" className="Select_Title flex" onClick={handleClick}>
-        <span className="Select_Icon w-4">i</span>
-        <span className="Select_Label">usd</span>
+        <span className="Select_Icon w-4">{data[curSelection].icon}</span>
+        <span className="Select_Label">{data[curSelection].label}</span>
       </button>
       {viewList && (
         <ul className="Select_Options absolute">
-          <Option onChange={hangleChange} />
+          <input type="text" className="Options_Search" />
+          <Option onChange={handleChange} />
         </ul>
       )}
     </div>
