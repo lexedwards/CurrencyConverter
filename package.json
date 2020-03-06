@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "axios-cache-adapter": "^2.5.0",
     "cssnano": "^4.1.10",
+    "currency-flags": "^2.1.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",

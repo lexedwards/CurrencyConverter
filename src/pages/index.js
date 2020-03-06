@@ -3,8 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import fetchCountries from '../api/fetchCountries';
-import CurrencyDropdown from '../components/currency-dropdown';
-import { Select } from '../components/alt-dropdown';
+import CurrencySelect from '../components/CurrencySelect';
 
 const IndexPage = () => {
   fetchCountries();
@@ -13,8 +12,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <section id="ExchangeCalc">
-        <CurrencyDropdown />
-        <Select />
+        <CurrencySelect />
       </section>
       <section id="countryInfo"></section>
     </Layout>
