@@ -1,4 +1,4 @@
-export const Reducer = (state, action) => {
+export default (state, action) => {
   switch (action.type) {
     case '':
       return {};

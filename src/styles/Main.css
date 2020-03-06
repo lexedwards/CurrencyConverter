@@ -16,3 +16,7 @@
 .font-raleway {
   font-family: 'Raleway', Verdana, Tahoma, sans-serif;
 }
+
+.currency-list {
+  height: calc(3.5rem * 5);
+}
