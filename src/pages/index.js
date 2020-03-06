@@ -13,6 +13,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <section id="ExchangeCalc">
         <CurrencySelect />
+        <CurrencySelect />
       </section>
       <section id="countryInfo"></section>
     </Layout>

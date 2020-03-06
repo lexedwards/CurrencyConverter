@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 import initState from './initState';
-import { Reducer } from './Reducer';
+import Reducer from './Reducer';
 
 export const StateContext = createContext();
 
