@@ -44,7 +44,7 @@ const Footer = ({}) => {
   );
 };
 
-Footer.PropTypes = {};
+Footer.propTypes = {};
 
 Footer.defaultProps = {};
 
