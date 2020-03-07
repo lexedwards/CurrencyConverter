@@ -1,5 +1,4 @@
 export default {
   rate: 0.77,
-  fromXC: 'USD',
-  toXC: 'GBP',
+  convert: { base: 'USD', target: 'GBP' },
 };

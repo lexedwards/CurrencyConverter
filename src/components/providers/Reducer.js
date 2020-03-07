@@ -1,7 +1,8 @@
 export default (state, action) => {
   switch (action.type) {
-    case '':
-      return {};
+    case 'onSelect':
+      state.convert[action.payload.Xrole] = action.payload.currency;
+      return state;
     default:
       return state;
   }

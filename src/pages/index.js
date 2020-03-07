@@ -12,8 +12,8 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <section id="ExchangeCalc">
-        <CurrencySelect />
-        <CurrencySelect />
+        <CurrencySelect Xrole="base" />
+        <CurrencySelect Xrole="target" />
       </section>
       <section id="countryInfo"></section>
     </Layout>
