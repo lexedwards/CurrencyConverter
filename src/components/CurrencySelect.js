@@ -2,12 +2,11 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'currency-flags/dist/currency-flags.css';
 import mock from '../../__mocks__/oxcLatest.json';
-import { useStateValue } from './providers/Context';
+import { useStoreValue } from './providers/Context';
+import fetchXC from '../api/fetchXC';
 
 const CurrencySelect = ({ Xrole }) => {
-  const [{ convert }, dispatch] = useStateValue();
-
-  const rates = mock.rates;
+  const [{ rates, convert }, dispatch] = useStoreValue();
 
   const [showMenu, toggleMenu] = useState(false);
   const items = [];
@@ -32,26 +31,34 @@ const CurrencySelect = ({ Xrole }) => {
     const value = numericInput.current.value;
   };
 
-  for (const currency in rates) {
-    if (rates.hasOwnProperty(currency)) {
-      items.push(
-        <li
-          key={currency}
-          className="flex items-center p-2 cursor-pointer mt-2 mb-2"
-          tabIndex="0"
-          role="option"
-          aria-selected={currency === convert.base}
-          onClick={() => onSelect(currency)}
-          onKeyUp={evt => onSelectKbd(evt, currency)}
-        >
-          <div
-            className={`currency-flag currency-flag-${currency.toLowerCase()} mr-2`}
-          />
-          <p className="font-bold">{currency}</p>
-        </li>
-      );
-    }
-  }
+  fetchXC()
+    .then(res => {
+      dispatch({ type: 'updateRates', payload: { values: res.rates } });
+      return res.rates;
+    })
+    .then(values => {
+      for (const currency in values) {
+        if (values.hasOwnProperty(currency)) {
+          items.push(
+            <li
+              key={currency}
+              className="flex items-center p-2 cursor-pointer mt-2 mb-2"
+              tabIndex="0"
+              role="option"
+              aria-selected={currency === convert.base}
+              onClick={() => onSelect(currency)}
+              onKeyUp={evt => onSelectKbd(evt, currency)}
+            >
+              <div
+                className={`currency-flag currency-flag-${currency.toLowerCase()} mr-2`}
+              />
+              <p className="font-bold">{currency}</p>
+            </li>
+          );
+        }
+      }
+    })
+    .catch(err => console.log(err));
 
   const arrowRotation = showMenu ? 'rotate(180deg)' : 'rotate(0deg)';
 

@@ -11,7 +11,7 @@ export const StateProvider = ({ children }) => (
     {children}
   </StateContext.Provider>
 );
-export const useStateValue = () => useContext(StateContext);
+export const useStoreValue = () => useContext(StateContext);
 
 StateProvider.propTypes = {
   children: PropTypes.node.isRequired,
