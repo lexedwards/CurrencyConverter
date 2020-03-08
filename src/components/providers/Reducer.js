@@ -9,6 +9,7 @@ export default (state, { type, payload }) => {
       }
       return state;
     case 'updateRates':
+      console.log('triggerd Update Rates: ', payload.values);
       state.rates = payload.values;
       return state;
     default:

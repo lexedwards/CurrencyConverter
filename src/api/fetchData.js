@@ -21,7 +21,7 @@ export default function(url, query) {
         return resolve(res.data);
       })
       .catch(err => {
-        reject(err.response.data.error);
+        reject(console.error(err));
       });
   });
 }

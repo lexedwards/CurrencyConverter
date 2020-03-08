@@ -1,21 +1,20 @@
-import React, { useState, useRef } from 'react';
+import React, { Suspense, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'currency-flags/dist/currency-flags.css';
-import mock from '../../__mocks__/oxcLatest.json';
 import { useStoreValue } from './providers/Context';
 import fetchXC from '../api/fetchXC';
 
 const CurrencySelect = ({ Xrole }) => {
-  const [{ rates, convert }, dispatch] = useStoreValue();
+  const [{ convert, rates }, dispatch] = useStoreValue();
 
   const [showMenu, toggleMenu] = useState(false);
-  const items = [];
   const numericInput = useRef();
 
   const onSelect = currency => {
     dispatch({ type: 'onSelect', payload: { Xrole: Xrole, currency } });
     toggleMenu(!showMenu);
   };
+
   const onSelectKbd = (evt, value) => {
     evt.preventDefault();
     if (evt.keyCode === 27) {
@@ -31,15 +30,21 @@ const CurrencySelect = ({ Xrole }) => {
     const value = numericInput.current.value;
   };
 
-  fetchXC()
-    .then(res => {
-      dispatch({ type: 'updateRates', payload: { values: res.rates } });
-      return res.rates;
-    })
-    .then(values => {
-      for (const currency in values) {
-        if (values.hasOwnProperty(currency)) {
-          items.push(
+  const dataList = [];
+
+  const currencyList = async () => {
+    try {
+      const defaultRates = Object.keys(rates).length;
+      if (defaultRates === 2) {
+        const data = await fetchXC();
+        dispatch({ type: 'updateRates', payload: { values: data.rates } });
+      }
+    } catch (error) {
+      dataList.push(<li>Error: {error}</li>);
+    } finally {
+      for (const currency in rates) {
+        if (rates.hasOwnProperty(currency)) {
+          dataList.push(
             <li
               key={currency}
               className="flex items-center p-2 cursor-pointer mt-2 mb-2"
@@ -57,8 +62,9 @@ const CurrencySelect = ({ Xrole }) => {
           );
         }
       }
-    })
-    .catch(err => console.log(err));
+    }
+  };
+  currencyList();
 
   const arrowRotation = showMenu ? 'rotate(180deg)' : 'rotate(0deg)';
 
@@ -91,10 +97,10 @@ const CurrencySelect = ({ Xrole }) => {
       </div>
       {showMenu && (
         <ul
-          className="currency-list overflow-y-scroll absolute right-0 z-10 w-32 bg-teal-300"
+          className="currency-list overflow-y-scroll absolute right-0 z-10 max-w-32 bg-teal-300"
           tabIndex="-1"
         >
-          {items}
+          {dataList}
         </ul>
       )}
     </div>
