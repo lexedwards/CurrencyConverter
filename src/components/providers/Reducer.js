@@ -1,12 +1,12 @@
 export default (state, { type, payload }) => {
   switch (type) {
     case 'onSelect':
-      state.convert[payload.Xrole] = payload.currency;
-      state.rate = newConvertRate(state.convert, state.rates);
-      return state;
+      const newState = { ...state };
+      newState.convert[payload.Xrole] = payload.currency;
+      newState.rate = newConvertRate(newState.convert, newState.rates);
+      return newState;
     case 'updateRates':
-      state.rates = payload.values;
-      return state;
+      return { ...state, rates: payload.values };
     default:
       return state;
   }
