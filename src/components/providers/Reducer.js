@@ -2,11 +2,7 @@ export default (state, { type, payload }) => {
   switch (type) {
     case 'onSelect':
       state.convert[payload.Xrole] = payload.currency;
-      return state;
-    case 'calcRate':
-      if (state.convert.base === 'USD') {
-        state.rate = data[state.convert.target];
-      }
+      state.rate = newConvertRate(state.convert, state.rates);
       return state;
     case 'updateRates':
       state.rates = payload.values;
@@ -14,4 +10,10 @@ export default (state, { type, payload }) => {
     default:
       return state;
   }
+};
+
+const newConvertRate = ({ base, target }, rates) => {
+  const rounded = Math.round(rates[base] * rates[target] * 100);
+  const newRate = rounded / 100;
+  return newRate;
 };
