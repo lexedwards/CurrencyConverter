@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import 'currency-flags/dist/currency-flags.css';
 import { useStoreValue } from './providers/Context';
@@ -8,10 +8,9 @@ const CurrencySelect = ({ Xrole }) => {
   const [{ convert, rates }, dispatch] = useStoreValue();
 
   const [showMenu, toggleMenu] = useState(false);
-  const numericInput = useRef();
 
   const onSelect = currency => {
-    dispatch({ type: 'onSelect', payload: { Xrole: Xrole, currency } });
+    dispatch({ type: 'onSelect', payload: { xrole: Xrole, currency } });
     toggleMenu(!showMenu);
   };
 
@@ -26,8 +25,11 @@ const CurrencySelect = ({ Xrole }) => {
     }
   };
 
-  const onInput = () => {
-    const value = numericInput.current.value;
+  const handleChange = evt => {
+    dispatch({
+      type: 'updateInput',
+      payload: { xrole: Xrole, value: evt.target.value },
+    });
   };
 
   const dataList = [];
@@ -75,16 +77,19 @@ const CurrencySelect = ({ Xrole }) => {
           pattern="^(\d*\.)?\d+$"
           inputMode="numeric"
           className="p-2 rounded-l-sm flex-auto w-1"
-          ref={numericInput}
+          onChange={handleChange}
+          value={convert[Xrole].value}
         />
         <button
           className="p-2 flex items-center justify-between rounded-r-sm bg-teal-200 w-32 cursor-pointer"
           onClick={() => toggleMenu(!showMenu)}
         >
           <div
-            className={`currency-flag currency-flag-${convert[Xrole].toLowerCase()}`}
+            className={`currency-flag currency-flag-${convert[
+              Xrole
+            ].name.toLowerCase()}`}
           />
-          <p className="font-bold">{convert[Xrole]}</p>
+          <p className="font-bold">{convert[Xrole].name}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 ml-2"
@@ -97,7 +102,7 @@ const CurrencySelect = ({ Xrole }) => {
       </div>
       {showMenu && (
         <ul
-          className="currency-list overflow-y-scroll absolute right-0 z-10 max-w-32 bg-teal-300"
+          className="currency-list overflow-y-scroll absolute right-0 z-10 w-32 bg-teal-300"
           tabIndex="-1"
         >
           {dataList}
