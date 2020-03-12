@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useStoreValue } from './providers/Context';
 
 const CurrencyMeta = ({}) => {
-  let [{ convert, rate }, dispatch] = useStoreValue();
+  let [{ convert }, dispatch] = useStoreValue();
 
   return (
     <div className="convertRate flex">
@@ -12,7 +12,9 @@ const CurrencyMeta = ({}) => {
       </div>
       <p>
         Exchange Rate:{' '}
-        {typeof rate === 'number' ? (Math.round(rate) / 100).toString() : rate}
+        {typeof convert.rate === 'number'
+          ? (Math.round(convert.rate * 100) / 100).toString()
+          : convert.rate}
       </p>
       <button
         className="w-6 h-6 rounded-full bg-green-600 text-white text-center"
