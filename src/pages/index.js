@@ -2,18 +2,17 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import fetchCountries from '../api/fetchCountries';
 import CurrencySelect from '../components/CurrencySelect';
+import CurrencyMeta from '../components/CurrencyMeta';
 
 const IndexPage = () => {
-  fetchCountries();
-
   return (
     <Layout>
       <SEO title="Home" />
       <section id="ExchangeCalc">
-        <CurrencySelect />
-        <CurrencySelect />
+        <CurrencySelect Xrole="base" />
+        <CurrencyMeta />
+        <CurrencySelect Xrole="target" />
       </section>
       <section id="countryInfo"></section>
     </Layout>
