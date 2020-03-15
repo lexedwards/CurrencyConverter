@@ -6,6 +6,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap');
 
+/* purgecss start ignore */
+@import 'currency-flags/dist/currency-flags.min.css';
+/* purgecss end ignore */
+
 .bxs-natural {
   box-shadow: 0 2.8px 2.2px rgba(56, 56, 56, 0.034),
     0 6.7px 5.3px rgba(56, 56, 56, 0.048), 0 12.5px 10px rgba(56, 56, 56, 0.06),

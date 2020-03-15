@@ -15,6 +15,7 @@ module.exports = {
         printRejected: false,
         develop: false,
         tailwind: true,
+        whitelistPatterns: [/^currency/],
       },
     },
     'gatsby-plugin-react-helmet',
