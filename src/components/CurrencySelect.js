@@ -76,12 +76,12 @@ const CurrencySelect = ({ Xrole }) => {
         <input
           pattern="^(\d*\.)?\d+$"
           inputMode="numeric"
-          className="p-2 rounded-l-sm flex-auto w-1"
+          className="p-2 rounded-l-sm flex-auto w-1 bg-gray-700"
           onChange={handleChange}
           value={convert[Xrole].value}
         />
         <button
-          className="p-2 flex items-center justify-between rounded-r-sm bg-teal-200 w-32 cursor-pointer"
+          className="p-2 flex items-center justify-between rounded-r-sm bg-teal-500 w-32 cursor-pointer"
           onClick={() => toggleMenu(!showMenu)}
         >
           <div
@@ -102,7 +102,7 @@ const CurrencySelect = ({ Xrole }) => {
       </div>
       {showMenu && (
         <ul
-          className="currency-list overflow-y-scroll absolute right-0 z-10 w-32 bg-teal-300"
+          className="currency-list overflow-y-scroll absolute right-0 z-10 w-32 bg-teal-600"
           tabIndex="-1"
         >
           {dataList}

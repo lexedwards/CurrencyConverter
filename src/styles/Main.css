@@ -20,3 +20,12 @@
 .currency-list {
   height: calc(3.5rem * 5);
 }
+
+body {
+  color: white;
+  background-color: rgb(33, 37, 41);
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
