@@ -9,7 +9,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section id="ExchangeCalc">
+      <section
+        id="ExchangeCalc"
+        className="md:mx-auto md:max-w-sm flex-row mb-6 p-6 rounded-lg bg-gray-800"
+      >
         <CurrencySelect Xrole="base" />
         <CurrencyMeta />
         <CurrencySelect Xrole="target" />

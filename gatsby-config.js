@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'Currency + Countries Made Easy',
+    title: 'Currency + Countries',
     description: 'A simple tool with a purpose',
     author: 'Alex Edwards @_lexedwards',
     website: '//alexedwards.co',
