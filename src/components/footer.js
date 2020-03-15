@@ -23,21 +23,21 @@ const Footer = ({}) => {
   `);
 
   return (
-    <footer className="md:mx-auto md:max-w-sm ">
+    <footer className="md:mx-auto md:max-w-sm bg-gray-800 rounded-lg">
       <a
         href={data.site.siteMetadata.website}
         rel="dns-prefetch noopener noreferrer"
         target="_blank"
-        className="block md:flex border-gray-600 bxs-natural bg-white rounded-lg p-6"
+        className="block md:flex border-gray-600 rounded-lg p-6"
       >
         <Img
-          className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
+          className="h-16 w-16 md:h-24 md:w-24 rounded-full md:rounded-none mx-auto md:ml-0 md:mr-6"
           fluid={data.profileImage.childImageSharp.fluid}
           alt="Profile of Alex Edwards"
         />
         <div className="text-center md:text-left font-raleway">
           <p className="text-lg">Made by {data.site.siteMetadata.author}</p>
-          <p className=" text-teal-700 text-sm ">Front-End Developer</p>
+          <p className=" text-teal-400 text-sm ">Front-End Developer</p>
         </div>
       </a>
     </footer>

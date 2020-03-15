@@ -4,15 +4,16 @@ import { Link } from 'gatsby';
 
 const Header = ({ siteTitle }) => (
   <header>
+    <div id="title" className="font-raleway font-medium text-3xl p-6">
+      {siteTitle}
+    </div>
     <div id="menuButton"></div>
-    <nav id="menuPanel">
+    {/*}<nav id="menuPanel">
       <div id="search">
         <div id="searchBar"></div>
         <div id="searchResults hidden"></div>
       </div>
-      <div id="title" className="font-raleway font-extrabold text-3xl">
-        {siteTitle}
-      </div>
+
       <Link to="/">Home</Link>
       <Link to="/xcr" id="exchangeRates">
         Exchange Calculator
@@ -20,7 +21,7 @@ const Header = ({ siteTitle }) => (
       <Link to="/countries" id="countries">
         Country Information
       </Link>
-    </nav>
+</nav>{*/}
   </header>
 );
 
