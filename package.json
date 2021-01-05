@@ -6,7 +6,7 @@
   "author": "",
   "dependencies": {
     "autoprefixer": "^9.7.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-cache-adapter": "^2.5.0",
     "cssnano": "^4.1.10",
     "currency-flags": "^2.1.1",
